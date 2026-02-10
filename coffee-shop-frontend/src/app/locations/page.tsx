@@ -1,4 +1,5 @@
 import { getLocations } from '@/lib/wordpress'
+import ShareButton from '@/components/ShareButton'
 
 export const metadata = {
   title: 'Locations | CoffeeShop',
@@ -22,18 +23,18 @@ export default async function LocationsPage() {
       </section> */}
 
       {/* Locations */}
-      <section className="section min-h-screen bg-background pt-16">
+      <section className="section min-h-screen bg-background max-sm:pt-8 pt-16">
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {locations.map((location) => (
               <div key={location.id} className="card">
                 <div className="p-8">
-                  <h2 className="text-xl font-bold tracking-tight text-primary/75 border-b-2 border-accent/10 uppercase mb-4">
+                  <h2 className="text-xl font-bold tracking-tight text-primary/75 border-b-2 border-accent/10 uppercase mb-1">
                     {location.title.rendered}
                   </h2>
 
                   <div
-                    className="text-primary/75 mb-6"
+                    className="text-primary/75 mb-6 leading-none text-sm tracking-tight pt-1"
                     dangerouslySetInnerHTML={{ __html: location.content?.rendered || '' }}
                   />
 
@@ -42,10 +43,29 @@ export default async function LocationsPage() {
                     {location.meta?.address_street && (
                       <div>
                         <h4 className="font-bold text-primary mb-1">Address</h4>
-                        <p className="text-primary/75">
+                        <p className="text-primary/75 mb-2">
                           {location.meta.address_street}<br />
                           {location.meta.address_city}, {location.meta.address_state} {location.meta.address_zip}
                         </p>
+                        <div className="flex gap-2">
+                          <a
+                            href={`https://maps.google.com/?q=${encodeURIComponent(
+                              `${location.meta.address_street} ${location.meta.address_city}, ${location.meta.address_state} ${location.meta.address_zip}`
+                            )}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-accent hover:text-accent/80 text-sm font-medium"
+                          >
+                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5z"/>
+                            </svg>
+                            View on Maps
+                          </a>
+                          <ShareButton
+                            title={location.title.rendered}
+                            address={`${location.meta.address_street}, ${location.meta.address_city}, ${location.meta.address_state} ${location.meta.address_zip}`}
+                          />
+                        </div>
                       </div>
                     )}
 

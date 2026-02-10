@@ -71,3 +71,14 @@ export interface MenuByCategory {
   cold: MenuItem[]
   food: MenuItem[]
 }
+
+export interface ContactInfo extends WP_Post {
+  meta: {
+    general_email: string
+    general_phone: string
+    support_email: string
+    support_phone: string
+    business_hours: string
+    address: string
+  }
+}

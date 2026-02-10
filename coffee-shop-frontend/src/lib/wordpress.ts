@@ -30,6 +30,29 @@ async function fetchAPI(endpoint: string, options?: RequestInit) {
 }
 
 /**
+ * Safe fetch function that doesn't throw errors (for optional data like contact info)
+ */
+async function fetchAPIOptional(endpoint: string, options?: RequestInit) {
+  const url = `${API_URL}${endpoint}`
+
+  try {
+    const res = await fetch(url, {
+      ...options,
+      next: { revalidate: 60 },
+    })
+
+    if (!res.ok) {
+      return null
+    }
+
+    return res.json()
+  } catch (error) {
+    console.error(`Error fetching ${url}:`, error)
+    return null
+  }
+}
+
+/**
  * Get all products
  */
 export async function getProducts(): Promise<Product[]> {
@@ -154,6 +177,23 @@ export async function getTeamMembers(): Promise<TeamMember[]> {
   } catch (error) {
     console.error('Error fetching team members:', error)
     return []
+  }
+}
+
+/**
+ * Get contact information with fallback to defaults
+ */
+export async function getContactInfo() {
+  const result = await fetchAPIOptional('/coffee-shop/v1/contact')
+
+  // Return fetched data or defaults
+  return result || {
+    general_email: 'contact@coffee-shop.local',
+    general_phone: '(555) 123-4567',
+    support_email: 'support@coffee-shop.local',
+    support_phone: '(555) 123-4568',
+    business_hours: 'Monday - Friday: 6am - 8pm\nSaturday - Sunday: 7am - 9pm',
+    address: '123 Main Street, Anytown, USA',
   }
 }
 

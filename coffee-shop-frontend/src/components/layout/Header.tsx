@@ -74,12 +74,12 @@ export default function Header() {
 
             {/* Right - Cart & Profile */}
             <div className="justify-self-end flex items-center space-x-2">
-              <Link href="/account" className="text-texta hover:text-gold transition-colors rounded-full bg-white/15 p-1" aria-label="Profile">
+              <Link href="/account" className="text-texta hover:text-accent transition-colors rounded-full bg-white/15 p-1" aria-label="Profile">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </Link>
-              <Link href="/cart" className="text-texta hover:text-gold transition-colors relative rounded-full bg-white/15 p-[3px]" aria-label="Cart">
+              <Link href="/cart" className="text-texta hover:text-accent transition-colors relative rounded-full bg-white/15 p-[3px]" aria-label="Cart">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
                 </svg>
@@ -143,12 +143,12 @@ export default function Header() {
               </Link>
               {/* Cart & Profile Icons */}
               <div className="flex items-center space-x-4 pl-4 ml-4">
-                <Link href="/account" className="text-texta hover:text-gold transition-colors rounded-full bg-white/20 p-1" aria-label="Profile">
+                <Link href="/account" className="text-texta hover:text-accent transition-colors rounded-full bg-white/15 p-1" aria-label="Profile">
                   <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </Link>
-                <Link href="/cart" className="text-texta hover:text-gold transition-colors relative rounded-full bg-white/20 p-1" aria-label="Cart">
+                <Link href="/cart" className="text-texta hover:text-accent transition-colors relative rounded-full bg-white/15 p-1" aria-label="Cart">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
                   </svg>

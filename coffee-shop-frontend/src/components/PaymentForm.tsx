@@ -127,7 +127,7 @@ export default function PaymentForm({ onSuccess, onError }: PaymentFormProps) {
 
       {/* Card form for test */}
       {paymentMethod === 'card' && (
-        <div className="space-y-3 p-4 bg-stone-900/85 rounded-lg">
+        <div className="space-y-4 p-4 bg-stone-900/85 rounded-lg !mt-10">
           <p className="text-sm tracking-tight text-white/75 font-medium uppercase">Test Card Information</p>
           <p className="text-xs text-white/75">
            <span className="text-white/75 mr-2">Use card number</span>
@@ -164,7 +164,7 @@ export default function PaymentForm({ onSuccess, onError }: PaymentFormProps) {
 
       {/* Google Pay test info */}
       {paymentMethod === 'google' && (
-        <div className="space-y-3 p-4 bg-stone-900/85 rounded-lg">
+        <div className="space-y-4 p-4 bg-stone-900/85 rounded-lg !mt-10">
           <p className="text-sm tracking-tight text-white/75 font-medium uppercase">Google Pay Test Mode</p>
           <p className="text-xs text-white/75">
             Click the Pay button to simulate a Google Pay transaction in test mode.
@@ -174,7 +174,7 @@ export default function PaymentForm({ onSuccess, onError }: PaymentFormProps) {
 
       {/* Apple Pay test info */}
       {paymentMethod === 'apple' && (
-        <div className="space-y-3 p-4 bg-stone-900/85 rounded-lg">
+        <div className="space-y-4 p-4 bg-stone-900/85 rounded-lg !mt-10">
           <p className="text-sm tracking-tight text-white/75 font-medium uppercase">Apple Pay Test Mode</p>
           <p className="text-xs text-white/75">
             Click the Pay button to simulate an Apple Pay transaction in test mode.

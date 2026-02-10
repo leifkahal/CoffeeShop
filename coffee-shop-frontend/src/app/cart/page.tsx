@@ -100,12 +100,12 @@ export default function CartPage() {
           <h2 className="text-2xl font-bold text-white/85 mb-6 uppercase tracking-tight border-b-2 border-accent/10 max-w-max mx-auto">Shopping Cart</h2>
           <div className="space-y-2">
             {items.map((item) => (
-              <div key={item.id} className="card flex flex-col">
+              <div key={item.id} className="card flex flex-col p-[2px]">
                 <div className="flex overflow-hidden flex-1">
                   {/* Image */}
                   <div className="relative w-32 shrink-0 bg-gray-100">
                     {item.image ? (
-                      <Image src={item.image} alt={item.title} fill className="object-cover" />
+                      <Image src={item.image} alt={item.title} fill className="object-cover rounded-l-md" />
                     ) : (
                       <div className="w-full h-full bg-primary/10 flex items-center justify-center">
                         <svg className="w-10 h-10 text-primary/30" fill="currentColor" viewBox="0 0 24 24">
@@ -122,7 +122,7 @@ export default function CartPage() {
                       <h3 className="max-w-max border-accent/10 border-b-2 font-semibold text-primary/75 uppercase leading-tight tracking-tight">
                         {item.title}
                       </h3>
-                      <span className="text-sm text-gold font-bold ml-2 shrink-0">
+                      <span className="text-sm text-gold font-bold mr-2 shrink-0">
                         ${(item.price * item.quantity).toFixed(2)}
                       </span>
                     </div>
@@ -218,7 +218,7 @@ export default function CartPage() {
         {fulfillmentMethod === 'shipping' && (
           <div className="w-full bg-white/50 border border-white/10 rounded-lg p-6">
             <h2 className="text-lg tracking-tight max-w-max border-accent/10 border-b-2 font-semibold text-primary/75 mb-6 uppercase">Shipping Address</h2>
-            <form className="space-y-3">
+            <form className="space-y-2">
               <div className="grid grid-cols-2 gap-3">
                 <input
                   type="text"
@@ -249,27 +249,27 @@ export default function CartPage() {
                 onChange={(e) => setShippingData({ ...shippingData, address: e.target.value })}
                 className="w-full px-3 py-2 bg-white/50 border border-white/20 rounded text-sm text-primary/75 placeholder-primary/50 outline-none focus:border-primary/40 transition-colors"
               />
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-4 gap-2">
                 <input
                   type="text"
                   placeholder="City"
                   value={shippingData.city}
                   onChange={(e) => setShippingData({ ...shippingData, city: e.target.value })}
-                  className="px-3 py-2 bg-white/50 border border-white/20 rounded text-sm text-primary/75 placeholder-primary/50 outline-none focus:border-primary/40 transition-colors"
+                  className="col-span-2 px-2 py-2 bg-white/50 border border-white/20 rounded text-sm text-primary/75 placeholder-primary/50 outline-none focus:border-primary/40 transition-colors"
                 />
                 <input
                   type="text"
                   placeholder="State"
                   value={shippingData.state}
                   onChange={(e) => setShippingData({ ...shippingData, state: e.target.value })}
-                  className="px-3 py-2 bg-white/50 border border-white/20 rounded text-sm text-primary/75 placeholder-primary/50 outline-none focus:border-primary/40 transition-colors"
+                  className="px-2 py-1 bg-white/50 border border-white/20 rounded text-sm text-primary/75 placeholder-primary/50 outline-none focus:border-primary/40 transition-colors"
                 />
                 <input
                   type="text"
                   placeholder="ZIP"
                   value={shippingData.zip}
                   onChange={(e) => setShippingData({ ...shippingData, zip: e.target.value })}
-                  className="px-3 py-2 bg-white/50 border border-white/20 rounded text-sm text-primary/75 placeholder-primary/50 outline-none focus:border-primary/40 transition-colors"
+                  className="px-2 py-1 bg-white/50 border border-white/20 rounded text-sm text-primary/75 placeholder-primary/50 outline-none focus:border-primary/40 transition-colors"
                 />
               </div>
             </form>

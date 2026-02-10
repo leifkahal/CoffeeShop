@@ -85,4 +85,22 @@ p {
   .flex-buttons {
     @apply flex flex-wrap justify-center gap-2 sm:gap-4;
   }
+
+  /* Form field styles */
+  .form-input,
+  .form-select,
+  .form-textarea {
+    @apply px-3 py-2 bg-white/50 border border-white/20 rounded text-sm text-primary/75 placeholder-primary/50 outline-none focus:border-primary/40 transition-colors;
+  }
+
+  .form-input,
+  .form-select,
+  .form-textarea {
+    @apply w-full;
+  }
+
+  /* Form heading with bottom border */
+  .form-heading {
+    @apply text-lg tracking-tight border-accent/10 border-b-2 font-semibold text-primary/75 pb-2;
+  }
 }
