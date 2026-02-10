@@ -99,11 +99,11 @@ We welcome contributions to CoffeeShop! Here's how you can help:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+Please ensure your code follows the existing style and includes appropriate tests.
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is open source and available for use and modification.
 
 ## 👥 Authors
 
