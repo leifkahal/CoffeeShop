@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-primary;
+  }
+}
+
+p {
+  line-height: 1.2 !important;
+  }
+
+@layer components {
+  /* Button styles */
+  .btn {
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-primary/75 max-sm:text-xl text-white/75 hover:bg-accent;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary/75 text-primary hover:bg-secondary-dark;
+  }
+
+  .btn-tertiary {
+    @apply bg-accent/90 text-white hover:bg-accent/75;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white;
+  }
+
+  /* Container */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Card */
+  .card {
+    @apply bg-white/50 rounded-lg shadow-md overflow-hidden;
+  }
+  .section_dark .card {
+    @apply bg-[#d2c7bb] rounded-lg shadow-md overflow-hidden;
+  }
+
+  /* Section spacing */
+  .section {
+    @apply py-10 md:py-12 bg-hero-texture bg-blend-hard-light bg-center;
+  }
+   footer {
+    @apply bg-primary/75 text-white/75 bg-hero-texture bg-blend-screen bg-center;
+  }
+
+  @media (max-width: 768px) {
+    footer div[className*="grid"] > div {
+      @apply text-center mx-auto;
+    }
+
+    footer div[className*="grid"] > div h4 {
+      @apply mx-auto mb-2;
+    }
+
+    footer div[className*="grid"] > div ul {
+      @apply flex flex-col items-center;
+    }
+
+    footer div[className*="grid"] > div a {
+      @apply justify-center;
+    }
+  }
+
+  nav a:not([href="/"]) {
+    @apply hover:border-t-2 border-primary-dark/10
+  }
+
+  .active-link {
+    @apply border-t-2 border-primary-dark/10
+  }
+
+  /* Flex container for buttons */
+  .flex-buttons {
+    @apply flex flex-wrap justify-center gap-2 sm:gap-4;
+  }
+}

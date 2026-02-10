@@ -1,0 +1,14 @@
+/*
+Theme Name: CoffeeShop
+Theme URI: https://example.com/coffeeshop
+Author: Your Name
+Author URI: https://example.com
+Description: Headless WordPress theme for a coffee shop. Provides REST API endpoints for products, menu items, locations, and team members. Frontend powered by Next.js.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: coffeeshop
+Tags: headless, coffee, rest-api, custom-post-types
+*/
+
+/* This is a headless theme - no frontend styles needed */
